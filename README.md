@@ -236,7 +236,7 @@ If for some mysterious reasons it crashes (like in my case) please download ihnm
 Unpack it where you wish and run ihnm.Desktop.exe
 
 # License
-The license is GPL-3 because GPL-3 libs were used.
+The license is GPL-3 because it depends on GPL-3 libs.
 
 
 `printf("Goodbye, weed");`
