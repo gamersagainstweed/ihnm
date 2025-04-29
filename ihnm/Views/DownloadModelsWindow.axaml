@@ -1,0 +1,72 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ihnm.DownloadModelsWindow"
+        Title="Download TTS models">
+
+
+		<Grid Name="menuGrid">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="50"></RowDefinition>
+				<RowDefinition Height="50"></RowDefinition>
+				<RowDefinition Height="500"></RowDefinition>
+				<RowDefinition Height="50"></RowDefinition>
+				<RowDefinition Height="50"></RowDefinition>
+			</Grid.RowDefinitions>
+
+			<Grid HorizontalAlignment="Center" Grid.Row="1">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"></ColumnDefinition>
+					<ColumnDefinition Width="Auto"></ColumnDefinition>
+					<ColumnDefinition Width="Auto"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+
+				<Button Click="ttsClick">TTS</Button>
+				<Button Click="sttClick" Grid.Column="1">STT</Button>
+				<Button Click="vadClick" Grid.Column="2">VAD</Button>
+			</Grid>
+
+			<Panel Grid.Row="2" HorizontalAlignment="Center">
+				<ScrollViewer>
+
+
+					<Grid Name="root">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"></RowDefinition>
+							<RowDefinition Height="50"></RowDefinition>
+							<RowDefinition Height="Auto"></RowDefinition>
+							<RowDefinition Height="100"></RowDefinition>
+							<RowDefinition Height="Auto"></RowDefinition>
+						</Grid.RowDefinitions>
+
+
+
+						<TextBlock Grid.Row="0" HorizontalAlignment="Center">
+
+							Select models to download:
+						</TextBlock>
+
+						<Button Name="selectAllBtn" Click="selectAll" HorizontalAlignment="Center" Grid.Row="1">
+							Select All
+						</Button>
+
+						<UniformGrid Grid.Row="2" Canvas.Top="30" HorizontalAlignment="Center" Name="modelsGrid" Columns="1"/>
+
+
+
+					</Grid>
+
+				</ScrollViewer>
+			</Panel>
+			
+		<Button Grid.Row="3"  Name="downloadButton" Click="DownloadHandler" HorizontalAlignment="Center">Download selected models</Button>
+
+			<TextBlock Name="output" Grid.Row="4" HorizontalAlignment="Center"></TextBlock>
+
+
+		</Grid>
+
+
+	</Window>

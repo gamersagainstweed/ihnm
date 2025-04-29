@@ -1,0 +1,64 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ihnm.FavoritesWindow"
+        Title="FavoritesWindow"
+		TransparencyBackgroundFallback="Transparent"
+		Background="{x:Null}">
+	<Canvas>
+	<Grid Name="favoritesGrid">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+	</Grid>
+	<Grid Name="hotkeysGrid">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+			<ColumnDefinition Width="80"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+	</Grid>
+	</Canvas>
+</Window>

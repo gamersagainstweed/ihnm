@@ -1,0 +1,144 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ihnm.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700"
+             x:Class="ihnm.Views.MainView"
+			 xmlns:md="clr-namespace:Markdown.Avalonia;assembly=Markdown.Avalonia">
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+	</Design.DataContext>
+
+
+	<Grid  HorizontalAlignment="Center" VerticalAlignment="Center">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"></RowDefinition>
+			<RowDefinition Height="50"></RowDefinition>
+			<RowDefinition Height="50"></RowDefinition>
+			<RowDefinition Height="50"></RowDefinition>
+			<RowDefinition Height="50"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="50"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+		</Grid.RowDefinitions>
+
+	<TextBlock HorizontalAlignment="Center" Grid.Row="0">
+	Welcome to ihnm
+	</TextBlock>
+
+		<Grid ColumnDefinitions="*,Auto" Grid.Row="1" >
+			<TextBlock VerticalAlignment="Center" HorizontalAlignment="Right">Microphone (if you have one): </TextBlock>
+			<ComboBox Name="inputDeviceBox" VerticalAlignment="Center" Width="200" Grid.Column="1" ></ComboBox>
+		</Grid>
+
+		<Grid ColumnDefinitions="*,Auto" Grid.Row="2" >
+			<TextBlock VerticalAlignment="Center" HorizontalAlignment="Right">Virtual Cable input: </TextBlock>
+			<ComboBox Name="virtualCableBox" VerticalAlignment="Center" Width="200" Grid.Column="1" ></ComboBox>
+		</Grid>
+
+		<Grid ColumnDefinitions="*,Auto" Grid.Row="3" >
+			<TextBlock VerticalAlignment="Center" HorizontalAlignment="Right">Playback Device: </TextBlock>
+			<ComboBox Name="playbackDeviceBox" VerticalAlignment="Center" Width="200" Grid.Column="1" ></ComboBox>
+		</Grid>
+
+		<Grid ColumnDefinitions="*,Auto" Grid.Row="4" >
+			<TextBlock VerticalAlignment="Center" HorizontalAlignment="Right">Playback Volume: </TextBlock>
+			<Slider Name="volumeSlider" Grid.Column="1" Width="200" Value="100"></Slider>
+		</Grid>
+
+		<Button Name="downloadModelsButton" Click="DownloadModelsHandler" Grid.Row="5" HorizontalAlignment="Center">Download TTS/STT/VAD models</Button>
+
+		<Grid ColumnDefinitions="*,Auto" Grid.Row="6" >
+			<TextBlock VerticalAlignment="Center" HorizontalAlignment="Right">Use Speech-To-Text? </TextBlock>
+			<CheckBox Grid.Column="1" Name="useSTT"></CheckBox>
+		</Grid>
+
+		<Grid ColumnDefinitions="*,Auto" Grid.Row="7" >
+			<TextBlock VerticalAlignment="Center" HorizontalAlignment="Right">Model: </TextBlock>
+			<ComboBox Name="modelBox" VerticalAlignment="Center" Width="200" Grid.Column="1" ></ComboBox>
+		</Grid>
+
+		<Grid ColumnDefinitions="*,Auto" Grid.Row="8" >
+			<TextBlock VerticalAlignment="Center" HorizontalAlignment="Right">Realtime?</TextBlock>
+			<CheckBox Grid.Column="1" Name="realtimeCheckbox"></CheckBox>
+		</Grid>
+
+		<TextBlock Grid.Row="9"></TextBlock>
+
+		<Button Name="downloadSoundsButton" Click="DownloadSoundsHandler" Grid.Row="10" HorizontalAlignment="Center">Download default sounds (345MB)</Button>
+
+		<TextBlock Grid.Row="11"></TextBlock>
+
+		<Grid ColumnDefinitions="*,Auto" Grid.Row="12" >
+			<TextBlock VerticalAlignment="Center" HorizontalAlignment="Right">Enable Lipsync in SCP:SL?</TextBlock>
+			<CheckBox Grid.Column="1" Name="lipsyncCheckbox"></CheckBox>
+		</Grid>
+
+		<TextBlock Grid.Row="13" HorizontalAlignment="Right" Text="(Don't forget to open RA with M key after you join any server)"></TextBlock>
+		
+		<TextBlock Grid.Row="14"/>
+		
+		<Grid ColumnDefinitions="*,Auto" Grid.Row="15" >
+			<TextBlock VerticalAlignment="Center" HorizontalAlignment="Right">Enable audio from microphone?</TextBlock>
+			<CheckBox Grid.Column="1" Name="micEnableCheckbox"></CheckBox>
+		</Grid>
+
+		<Grid ColumnDefinitions="*,Auto" Grid.Row="16" >
+			<TextBlock VerticalAlignment="Center" HorizontalAlignment="Right">Microphone Volume: </TextBlock>
+			<Slider Name="micvolumeSlider" Grid.Column="1" Width="200" Value="50"></Slider>
+		</Grid>
+
+
+
+		<Button Name="setupButton" Click="ClickHandler" Grid.Row="17" HorizontalAlignment="Center">Let's go!</Button>
+
+		<TextBlock Grid.Row="18" HorizontalAlignment="Center" />
+
+
+
+		<WrapPanel Grid.Row="19">
+
+			<TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Text="Press "/>
+
+			<ComboBox Name="invokeSpecialKey" VerticalAlignment="Center"></ComboBox>
+			<TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Text=" + "/>
+			<ComboBox Name="invokeKey"  VerticalAlignment="Center"></ComboBox>
+
+			<TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text=" in-game to enter the sentence you want"/>
+
+		</WrapPanel>
+
+		<TextBlock Grid.Row="20" HorizontalAlignment="Center" Text="it to say and then just hold your VTT key."/>
+
+		<TextBlock HorizontalAlignment="Center" Grid.Row="21"></TextBlock>
+
+		<TextBlock HorizontalAlignment="Center" Grid.Row="22">Made with ❤ by C.A.S.S.I.E. "RavenHam" +  deleted</TextBlock>
+		<TextBlock HorizontalAlignment="Center" Grid.Row="23">+ Gamers Against Weed + NuGet devs</TextBlock>
+		
+		<md:MarkdownScrollViewer HorizontalAlignment="Center" Grid.Row="24" Name="outputCopy"></md:MarkdownScrollViewer>
+
+
+	</Grid>
+
+
+
+</UserControl>

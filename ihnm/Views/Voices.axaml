@@ -1,0 +1,78 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ihnm.Voices"
+        Title="Voices Window">
+
+
+<Grid Name="rootGrid">
+<Grid.RowDefinitions>
+	<RowDefinition Height="100"></RowDefinition>
+	<RowDefinition Height="50"></RowDefinition>
+	<RowDefinition Height="40"></RowDefinition>
+	<RowDefinition Height="40"></RowDefinition>
+</Grid.RowDefinitions>
+
+
+	<WrapPanel Name="filtersPanel"></WrapPanel>
+
+
+<Panel Grid.Row="1" HorizontalAlignment="Center">
+<ScrollViewer>
+  <Grid Name="VoicesGrid" >
+	  <Grid.RowDefinitions>
+		  <RowDefinition Height="auto"></RowDefinition>
+	  </Grid.RowDefinitions>
+    
+  
+
+		</Grid>
+
+		
+
+		<!--<Canvas HorizontalAlignment="Center" VerticalAlignment="Center">
+		
+		<Button Theme="{StaticResource customButton}" Height="40" Width="130" Name="selectVoiceBtn" Background="White" Click="ClickHandler" HorizontalAlignment="Center">
+
+			<TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+				Select voice
+			</TextBlock>
+
+		</Button>
+
+		<Canvas Name="arrows" IsVisible="False">
+
+			<Image Source="avares://scpCassie/Assets/morshu.png" Canvas.Left="-310"></Image>
+
+			<Canvas.RenderTransform>
+				<ScaleTransform ScaleX="1" ScaleY="1"></ScaleTransform>
+			</Canvas.RenderTransform>
+		</Canvas>
+
+		</Canvas>-->
+	
+</ScrollViewer>
+</Panel>
+
+	
+	<Button Grid.Row="2" Name="selectVoiceBtn" Click="ClickHandler" HorizontalAlignment="Center">
+
+		<TextBlock FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center">
+			Change voice
+		</TextBlock>
+
+	</Button>
+
+	<Button Grid.Row="3" Name="setDefaultBtn" Click="ClickDefaultHandler" HorizontalAlignment="Center">
+
+		<TextBlock FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center">
+			Set selected voice as default
+		</TextBlock>
+
+	</Button>
+
+
+</Grid>
+</Window>

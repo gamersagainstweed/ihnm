@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+	
+		
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.2.7" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.7" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.7" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
+
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.7" />
+    <PackageReference Include="EchoSharp" Version="0.1.0" />
+    <PackageReference Include="EchoSharp.Abstractions" Version="0.1.0" />
+    <PackageReference Include="EchoSharp.NAudio" Version="0.1.0" />
+    <PackageReference Include="EchoSharp.Onnx.Sherpa" Version="0.1.0" />
+    <PackageReference Include="EchoSharp.Onnx.SileroVad" Version="0.1.0" />
+    <PackageReference Include="GuerrillaNtp" Version="3.1.0" />
+    <PackageReference Include="Markdown.Avalonia" Version="11.0.3-a1" />
+    <PackageReference Include="Microsoft-WindowsAPICodePack-Shell" Version="1.1.5" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    <PackageReference Include="NAudio.WaveFormRenderer" Version="2.0.0" />
+    <PackageReference Include="org.k2fsa.sherpa.onnx" Version="1.11.3" />
+    <PackageReference Include="PinYinConverterCore" Version="1.0.2" />
+    <PackageReference Include="PortAudioSharp2" Version="1.0.4" />
+    <PackageReference Include="Profanity.Detector" Version="0.1.8" />
+    <PackageReference Include="SharpCompress" Version="0.39.0" />
+    <PackageReference Include="SharpHook" Version="5.3.8" />
+    <PackageReference Include="SoundTouch.Net.NAudioSupport.Core" Version="2.3.2" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Python.Runtime">
+      <HintPath>..\dlls\Python.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="120" d:DesignHeight="140"
+             x:Class="ihnm.VoiceCard">
+  
+
+    <ToggleButton Name="voiceBtn" Height="140" Width="120">
+    
+        <Grid>
+        <Grid.RowDefinitions>
+			<RowDefinition Height="100"></RowDefinition>
+		    <RowDefinition Height="auto"></RowDefinition>
+			<RowDefinition Height="auto"></RowDefinition>
+		</Grid.RowDefinitions>
+
+			
+			<Image Name="voiceImage" Width="120" Source=""></Image>
+			<TextBlock Name="voiceName" Grid.Row="1" FontSize="15" Text="John Doe" HorizontalAlignment="Center"></TextBlock>
+			<TextBlock Name="langName" Grid.Row="2" FontSize="10" Text="lang" HorizontalAlignment="Center"></TextBlock>
+
+		</Grid>
+
+	</ToggleButton>
+    
+</UserControl>
