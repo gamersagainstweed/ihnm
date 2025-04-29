@@ -35,6 +35,10 @@ By default it uses glados but you can switch voices by typing-in following comma
 
 There's a lot of disinformation on reddit. Don't listen to these blatant liars, engimain.
 
+### Custom voices
+ihnm uses sherpa-onnx both for TTS and STT, therefore you can add custom vits and Kokoro voices.
+To do so use sherpa-onnx guidelines for voice metadata conversion and then drop your voice into /sherpa/tts-models and create the corresponding txt file for it in /sherpaVoices/, add necessary info to it.
+
 ## Suggestions
 In order to do autocomplete press 0-9 key corresponding to one under the suggestion you want to use or press one of these keys on your numpad instead.
 
@@ -230,6 +234,9 @@ You should download ihnm-v1.0-win64-cuda.zip on the Releases page.
 If for some mysterious reasons it crashes (like in my case) please download ihnm-v1.0-win64-cpu-only.zip
 
 Unpack it where you wish and run ihnm.Desktop.exe
+
+# License
+The license is GPL-3 because GPL-3 libs were used.
 
 
 `printf("Goodbye, weed");`
