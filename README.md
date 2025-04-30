@@ -215,19 +215,6 @@ I'm surprised you asked but VTT stands for Voice-to-Talk.
 
 There's a command /numberone that's like /scatman but for "We're Number One"
 
-# What exactly is ihnm?
-ihnm is a concept of a constantly present overlay that is largerly being accessed using a terminal-like prompt and changes its behaviour based on its contents.
-
-For example it might offer suggestions or highlight parts of the prompt in various colors, change what L,R arrow keys do. 
-
-The overlay can include GUI elements as well, those are interactable only if it's in the active state it can be switched to with a hotkey.
-
-It eliminates the need to navigate complex UI layouts and memorize thoundsands of hotkeys.
-
-
-
-
-
 # Download
 You should download ihnm-v1.0-win64-cuda.zip on the Releases page. 
 
