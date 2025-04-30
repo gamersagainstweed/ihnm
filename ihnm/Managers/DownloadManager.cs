@@ -430,7 +430,7 @@ namespace ihnm.Managers
         public static async void DownloadSounds()
         {
             await DownloadTarBZ2("./",
-        "https://archive.org/download/ihnmsounds.tar/sounds.tar.bz2");
+        "https://archive.org/download/ihnmdefaultsounds1/sounds.tar.bz2");
 
         }
 
