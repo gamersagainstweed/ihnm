@@ -658,9 +658,6 @@ public partial class overlayWindow : Window
                         Common.sentence += e.Data.KeyChar;
                 }
 
-                Common.sentence = filter.CensorString(Common.sentence,'?');
-                Common.sentence2 = filter.CensorString(Common.sentence2, '?');
-
                 sampledVoiceManager.sentenceArray = Regex.Split(Common.sentenceFull, " ");
                 sampledVoiceManager.updateSentenceSplit();
 

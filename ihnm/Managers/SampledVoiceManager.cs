@@ -503,7 +503,7 @@ namespace ihnm.Managers
 
 
 
-            this.formattedSentence = Common.sentence;
+            this.formattedSentence = filter.CensorString(Common.sentence, '?');
 
             if (songsManager.isSongPlaying)
             {
@@ -610,7 +610,7 @@ namespace ihnm.Managers
 
 
 
-            this.formattedSentence2 = Common.sentence2;
+            this.formattedSentence2 = filter.CensorString(Common.sentence2, '?');
 
             Dispatcher.UIThread.InvokeAsync(() => this.cursorRect.IsVisible = true);
             this.CallClearOutput();
