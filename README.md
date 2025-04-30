@@ -216,9 +216,9 @@ I'm surprised you asked but VTT stands for Voice-to-Talk.
 There's a command /numberone that's like /scatman but for "We're Number One"
 
 # Download
-You should download ihnm-v1.0-win64-cuda.zip on the Releases page. 
+You should download ihnm-v1.1-win64-cuda.zip on the Releases page. 
 
-If for some mysterious reasons it crashes (like in my case) please download ihnm-v1.0-win64-cpu-only.zip
+If for some mysterious reasons it crashes (like in my case) please download ihnm-v1.1-win64-cpu-only.zip
 
 Unpack it where you wish and run ihnm.Desktop.exe
 
