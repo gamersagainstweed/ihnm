@@ -1,6 +1,6 @@
 
 # ihnm (i have no microphone)
-TTS overlay for games (Text-to-Speech). Glados voice. Soundboard that always shows your hotkeys in overlay. Unlimited switchable soundboards. Speech-to-Text-to-Speech. 40+ languages, custom voices supported. Synchronous multi-person playback of music in-game. Radio. Lipsync in SCP:SL that works with your mic input. Everything is local, no cloud.
+TTS overlay for games (Text-to-Speech). Glados voice. Soundboard that always shows your hotkeys in overlay. Unlimited switchable soundboards. Speech-to-Text-to-Speech. 40+ languages, custom voices supported. Synchronous multi-person playback of music in-game. Radio. Lipsync in SCP:SL that works with your mic input. All AI stuff is local, no cloud.
 
 ## CUDA
 Please install CUDA 11.8 (other versions aren't supported) for the best performance if you're using NVIDIA GPU. Kokoro voices and Speech-to-Text work bad without CUDA.
@@ -83,6 +83,8 @@ If you want to play music in sync with other people using ihnm use following com
 /playmusicsync (music name) [ping]
 
 Ping argument is for your current ping in the game you're playing. You can omit the ping argument and use /ping (ping) command instead before using /playmusicsync to specify your current ping.
+
+It'll connect to pool.ntp.org and then to the closest NTP server, be aware of that.
 
 ## Songs
 If you want to play custom songs you can just drop these into /sounds/music/ as well but if you want multiple voicetracks or lipsync in SCP:SL you should instead drop these
