@@ -35,9 +35,9 @@ namespace ihnm.Managers
         MeteringSampleProvider curSample2;
         MeteringSampleProvider micSample;
 
-        Bitmap neutral = new Bitmap(AssetLoader.Open(new Uri("avares://scpCassie/Assets/classd_neutral.png")));
-        Bitmap happy = new Bitmap(AssetLoader.Open(new Uri("avares://scpCassie/Assets/classd_happy.png")));
-        Bitmap scared = new Bitmap(AssetLoader.Open(new Uri("avares://scpCassie/Assets/classd_scared.png")));
+        Bitmap neutral = new Bitmap(AssetLoader.Open(new Uri("avares://ihnm/Assets/classd_neutral.png")));
+        Bitmap happy = new Bitmap(AssetLoader.Open(new Uri("avares://ihnm/Assets/classd_happy.png")));
+        Bitmap scared = new Bitmap(AssetLoader.Open(new Uri("avares://ihnm/Assets/classd_scared.png")));
 
         EventSimulator simulator = new EventSimulator();
 

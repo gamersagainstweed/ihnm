@@ -260,8 +260,8 @@ namespace ihnm.Managers
                 Common.sentence = e.action+" ";
                 Common.sentence2 = "";
 
-                Common.sentence = filter.CensorString(Common.sentence, ' ');
-                Common.sentence2 = filter.CensorString(Common.sentence2, ' ');
+                Common.sentence = filter.CensorString(Common.sentence.ToLower(), ' ');
+                Common.sentence2 = filter.CensorString(Common.sentence2.ToLower(), ' ');
 
                 this.currentWord = 0;
 
@@ -1213,8 +1213,8 @@ namespace ihnm.Managers
         public void ReadSentence()
         {
 
-            Common.sentence = filter.CensorString(Common.sentence, ' ');
-            Common.sentence2 = filter.CensorString(Common.sentence2, ' ');
+            Common.sentence = filter.CensorString(Common.sentence.ToLower(), ' ');
+            Common.sentence2 = filter.CensorString(Common.sentence2.ToLower(), ' ');
 
             if (Common.sentenceFull.Length == 0)
                 return;

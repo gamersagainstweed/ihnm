@@ -837,8 +837,8 @@ namespace ihnm.Managers
         public void Read(bool cache = false)
         {
 
-            Common.sentence = filter.CensorString(Common.sentence,' ');
-            Common.sentence2 = filter.CensorString(Common.sentence2, ' ');
+            Common.sentence = filter.CensorString(Common.sentence.ToLower(),' ');
+            Common.sentence2 = filter.CensorString(Common.sentence2.ToLower(), ' ');
 
             List<string> sentenceList = Common.sentenceFull.Split(new char[] { ' ' }).ToList();
 
@@ -1222,7 +1222,7 @@ namespace ihnm.Managers
                 {
 
                     if (this.wordlist[curWord].StartsWith(this.uncompleteWord) 
-                        && this.wordlist[curWord].Length > 2 && !filter.IsProfanity(this.wordlist[curWord]))
+                        && this.wordlist[curWord].Length > 2 && !filter.IsProfanity(this.wordlist[curWord].ToLower()))
                     {
                         suggestions.Add(this.wordlist[curWord]);
                     }
