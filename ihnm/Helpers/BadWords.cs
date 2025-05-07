@@ -5384,7 +5384,6 @@ namespace ihnm.Helpers
 "浑蛋",
 "玛的",
 "风月大陆",
-"shit",
 "傻傻逼逼",
 "Y道",
 "小泬",
