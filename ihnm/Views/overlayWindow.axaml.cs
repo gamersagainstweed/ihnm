@@ -761,9 +761,6 @@ public partial class overlayWindow : Window
 
                 }
 
-                Common.sentence = filter.CensorString(Common.sentence, '?');
-                Common.sentence2 = filter.CensorString(Common.sentence2, '?');
-
                 sherpaVoiceManager.sentenceArray = Regex.Split(Common.sentenceFull, " ");
                 sherpaVoiceManager.updateSentenceSplit();
 
