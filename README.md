@@ -2,6 +2,8 @@
 # ihnm (i have no microphone)
 TTS overlay for games (Text-to-Speech). Glados voice. Soundboard that always shows your hotkeys in overlay. Unlimited switchable soundboards. Speech-to-Text-to-Speech. 40+ languages, custom voices supported. Synchronous multi-person playback of music in-game. Radio. Lipsync in SCP:SL that works with your mic input. All AI stuff is local, no cloud.
 
+Demo: https://www.youtube.com/watch?v=af3beTlEV9Q
+
 ## CUDA
 Please install CUDA 11.8 (other versions aren't supported) for the best performance if you're using NVIDIA GPU. Kokoro voices and Speech-to-Text work bad without CUDA.
 
