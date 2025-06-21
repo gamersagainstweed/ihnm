@@ -260,8 +260,8 @@ namespace ihnm.Managers
                 Common.sentence = e.action+" ";
                 Common.sentence2 = "";
 
-                Common.sentence = filter.CensorString(Common.sentence.ToLower(), ' ');
-                Common.sentence2 = filter.CensorString(Common.sentence2.ToLower(), ' ');
+                //Common.sentence = filter.CensorString(Common.sentence.ToLower(), ' ');
+                //Common.sentence2 = filter.CensorString(Common.sentence2.ToLower(), ' ');
 
                 this.currentWord = 0;
 
@@ -503,7 +503,7 @@ namespace ihnm.Managers
 
 
 
-            this.formattedSentence = filter.CensorString(Common.sentence, '?');
+            this.formattedSentence = Common.sentence;
 
             if (songsManager.isSongPlaying)
             {
@@ -610,7 +610,7 @@ namespace ihnm.Managers
 
 
 
-            this.formattedSentence2 = filter.CensorString(Common.sentence2, '?');
+            this.formattedSentence2 = Common.sentence2;
 
             Dispatcher.UIThread.InvokeAsync(() => this.cursorRect.IsVisible = true);
             this.CallClearOutput();
@@ -1213,8 +1213,8 @@ namespace ihnm.Managers
         public void ReadSentence()
         {
 
-            Common.sentence = filter.CensorString(Common.sentence.ToLower(), ' ');
-            Common.sentence2 = filter.CensorString(Common.sentence2.ToLower(), ' ');
+            //Common.sentence = filter.CensorString(Common.sentence.ToLower(), ' ');
+            //Common.sentence2 = filter.CensorString(Common.sentence2.ToLower(), ' ');
 
             if (Common.sentenceFull.Length == 0)
                 return;

@@ -23,7 +23,7 @@ public partial class MainView : UserControl
     public static List<MMDevice> inDeviceList = new List<MMDevice>();
     public static List<MMDevice> outDeviceList = new List<MMDevice>();
     public static List<string> micIDs = new List<string>();
-    public static List<string> speakerIDs = new List<string>(); //stolen from TTS-Voice-Wizard
+    public static List<string> speakerIDs = new List<string>();
 
     public MMDevice selectedCableInput;
     public MMDevice selectedPlayback;

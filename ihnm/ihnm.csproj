@@ -39,10 +39,4 @@
     <PackageReference Include="SoundTouch.Net.NAudioSupport.Core" Version="2.3.2" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Python.Runtime">
-      <HintPath>..\dlls\Python.Runtime.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 </Project>

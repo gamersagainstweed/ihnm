@@ -206,6 +206,10 @@ public partial class overlayWindow : Window
         
 
         this.hwnd = this.TryGetPlatformHandle().Handle;
+
+
+        int initialStyle = GetWindowLong(this.hwnd, -20);
+        SetWindowLong(this.hwnd, -20, initialStyle | 0x80000 | 0x20);
     }
 
     private void CursorRectUpdateTimer_Elapsed(object? sender, ElapsedEventArgs e)
@@ -2523,5 +2527,11 @@ public partial class overlayWindow : Window
         ShowWindow(hwnd, CONST_SW_SHOW);
         AttachThreadInput(windowThreadProcessId, currentThreadId, false);
     }
+
+    [DllImport("user32.dll", SetLastError = true)]
+    static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+    [DllImport("user32.dll")]
+    static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
 
 }

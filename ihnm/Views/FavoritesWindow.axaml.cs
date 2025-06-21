@@ -1,15 +1,21 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using System;
 using System.Runtime.InteropServices;
 
 namespace ihnm;
 
 public partial class FavoritesWindow : Window
 {
+
+    public IntPtr hwnd;
+
+
     public FavoritesWindow()
     {
         InitializeComponent();
+        this.Loaded += FavoritesWindow_Loaded;
 
         this.CanResize = false;
         this.Height = 25;
@@ -30,6 +36,13 @@ public partial class FavoritesWindow : Window
 
         this.Position = new PixelPoint(550, screenHeight-100);
 
+    }
+
+    private void FavoritesWindow_Loaded(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        this.hwnd = this.TryGetPlatformHandle().Handle;
+        int initialStyle = GetWindowLong(this.hwnd, -20);
+        SetWindowLong(this.hwnd, -20, initialStyle | 0x80000 | 0x20);
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -71,6 +84,12 @@ public partial class FavoritesWindow : Window
 
     [DllImport("user32.dll")]
     static extern bool EnumDisplaySettings(string deviceName, int modeNum, ref DEVMODE devMode);
+
+    [DllImport("user32.dll", SetLastError = true)]
+    static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+    [DllImport("user32.dll")]
+    static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
 
 
 }

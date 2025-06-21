@@ -626,8 +626,8 @@ namespace ihnm.Managers
 
 
                 config.Model.NumThreads = 4;
-                config.Model.Debug = 1;
-                config.Model.Provider = "gpu";
+                config.Model.Debug = 0;
+                config.Model.Provider = "cuda";
 
                 offlineTTS = new OfflineTts(config);
 
@@ -665,7 +665,7 @@ namespace ihnm.Managers
                     config.Model.Vits.Lexicon = "./" + modeldir + "/lexicon.txt";
 
                 config.Model.NumThreads = 4;
-                config.Model.Debug = 1;
+                config.Model.Debug = 0;
                 config.Model.Provider = "cuda";
 
                 offlineTTS = new OfflineTts(config);
@@ -837,8 +837,8 @@ namespace ihnm.Managers
         public void Read(bool cache = false)
         {
 
-            Common.sentence = filter.CensorString(Common.sentence.ToLower(),' ');
-            Common.sentence2 = filter.CensorString(Common.sentence2.ToLower(), ' ');
+            //Common.sentence = filter.CensorString(Common.sentence.ToLower(),' ');
+            //Common.sentence2 = filter.CensorString(Common.sentence2.ToLower(), ' ');
 
             List<string> sentenceList = Common.sentenceFull.Split(new char[] { ' ' }).ToList();
 
@@ -1390,7 +1390,9 @@ namespace ihnm.Managers
 
 
 
-            this.formattedSentence = filter.CensorString(Common.sentence,'?');
+            //this.formattedSentence = filter.CensorString(Common.sentence,'?');
+
+            this.formattedSentence = Common.sentence;
 
             if (songsManager.isSongPlaying)
             {
@@ -1447,7 +1449,7 @@ namespace ihnm.Managers
 
 
                 }
-            this.formattedSentence2 = filter.CensorString(Common.sentence2, '?');
+            this.formattedSentence2 = Common.sentence2;
 
             sentenceWords = Regex.Split(this.formattedSentence2, " ");
 

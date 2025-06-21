@@ -151,11 +151,12 @@ namespace ihnm.Managers
             KeyCode kCode = e.Data.KeyCode;
             allKeys[kCode.ToString()]= true;
 
+            foreach (string key in allKeys.Keys)
+                if (allKeys[key] == true)
+                    Debug.WriteLine(key);
+
             foreach(Hotkey hKey in hotkeys)
             {
-                if (hKey.keys[^1]==kCode.ToString())
-                {
-
                     bool fl = true;
 
                     foreach (string k in hKey.keys)
@@ -163,6 +164,7 @@ namespace ihnm.Managers
                         if (!allKeys[k])
                         {
                             fl = false;
+                            break;
                         }
                     }
 
@@ -172,11 +174,7 @@ namespace ihnm.Managers
                         HotkeyTypedEventArgs args = new HotkeyTypedEventArgs();
                         args.action = hKey.action;
                         this.OnHotkeyTyped(args);
-
-
-                    }
-
-                }
+                    } 
             }
             
         }
