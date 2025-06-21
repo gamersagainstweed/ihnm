@@ -7,6 +7,8 @@ Demo: https://www.youtube.com/watch?v=af3beTlEV9Q
 ## CUDA
 Please install CUDA 11.8 (other versions aren't supported) for the best performance if you're using NVIDIA GPU. Kokoro voices and Speech-to-Text work bad without CUDA.
 
+Besides CUDA 11.8 you have to install cuDNN v8.9.7 obtainable from here: https://developer.nvidia.com/rdp/cudnn-archive, here are the instructions: https://docs.nvidia.com/deeplearning/cudnn/installation/latest/windows.html
+
 ## Virtual Cable
 This app won't work without virtual cable. I'm using this one: https://vb-audio.com/Cable/.
 
@@ -206,9 +208,6 @@ By default vtt key is set to "Q" (sorry GMODers).
 
 Use /vtt (key) command to specify another key.
 
-### What the hell is VTT?
-I'm surprised you asked but VTT stands for Voice-to-Talk. 
-
 ## Some useful commands
 
 /vol (volume) - change the volume of everything except your mic input if it's enabled.
@@ -220,9 +219,9 @@ I'm surprised you asked but VTT stands for Voice-to-Talk.
 There's a command /numberone that's like /scatman but for "We're Number One"
 
 # Download
-You should download ihnm-v1.1-win64-cuda.zip on the Releases page. 
+You should download ihnm-v1.2-win64-cuda.zip on the Releases page. 
 
-If for some mysterious reasons it crashes (like in my case) please download ihnm-v1.1-win64-cpu-only.zip
+If for some mysterious reasons it crashes it might be due to cuDNN or CUDA not being properly installed. CPU-only version shouldn't crash.
 
 Unpack it where you wish and run ihnm.Desktop.exe
 
