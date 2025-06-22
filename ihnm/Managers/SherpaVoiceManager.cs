@@ -35,6 +35,9 @@ using NAudio.CoreAudioApi;
 using static ihnm.Managers.DownloadManager;
 using ihnm.Enums;
 using Microsoft.International.Converters.PinYinConverter;
+using System.Windows.Documents;
+using System.Windows.Forms;
+using Avalonia;
 
 namespace ihnm.Managers
 {
@@ -91,6 +94,8 @@ namespace ihnm.Managers
 
         public bool insideAlias=false;
 
+        private double suggestionsStartX = 0;
+
 
         private static readonly Lazy<HttpClient> httpClient = new Lazy<HttpClient>(() => new HttpClient
         {
@@ -116,14 +121,18 @@ namespace ihnm.Managers
 
         private ProfanityFilter.ProfanityFilter filter;
 
+        private double scalingFactor;
 
 
         public SherpaVoiceManager(AudioPlaybackEngine engine1, AudioPlaybackEngine engine2,
             MarkdownScrollViewer ttsBlock, MarkdownScrollViewer ttsHighlight, Grid suggestionsGrid,
             Rectangle delayRect, Rectangle cursorRect, SongsManager songsManager,
             MusicManager musicManager, SoundboardManager Soundboard, LoopManager loopManager,
-            AliasManager aliasManager, HotkeysManager hotkeysManager, FavoritesManager favoritesMgr, ProfanityFilter.ProfanityFilter filter)
+            AliasManager aliasManager, HotkeysManager hotkeysManager, FavoritesManager favoritesMgr, 
+            ProfanityFilter.ProfanityFilter filter)
         {
+            this.scalingFactor = scalingFactor;
+
             this.engine1 = engine1;
             this.engine2 = engine2;
             this.ttsBlock = ttsBlock;
@@ -893,7 +902,7 @@ namespace ihnm.Managers
                     Soundboard.Play(str);
                     
               
-                        this.startTalkTimer((int)(engine1.currentSoundLength.TotalMilliseconds-50));
+                    this.startTalkTimer((int)(engine1.currentSoundLength.TotalMilliseconds-50));
                 }
                 else if (musicManager.music.Contains(str))
                 {
@@ -1244,6 +1253,11 @@ namespace ihnm.Managers
         {
             this.suggestionsGrid.Children.Clear();
 
+            if (this.uncompleteWord.Length==1)
+                this.suggestionsStartX = ttsBlock.Bounds.Width * 2;
+
+            Canvas.SetLeft(this.suggestionsGrid, this.suggestionsStartX);
+
 
             TextBlock suggestionBlock;
             TextBlock suggestionKey;
@@ -1261,30 +1275,31 @@ namespace ihnm.Managers
             {
 
 
-                    if (curColumn < 9)
-                        curKey = (curColumn+1).ToString();
-                    else if (curColumn == 9)
-                        curKey = (0).ToString();
-                    else
-                        curKey = "";
+                if (curColumn < 9)
+                    curKey = (curColumn + 1).ToString();
+                else if (curColumn == 9)
+                    curKey = (0).ToString();
+                else
+                    break;
 
-                    suggestionEntry = new Grid();
-                    suggestionEntry.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
-                    suggestionEntry.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+                suggestionEntry = new Grid();
+                suggestionEntry.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Parse("15") });
+                suggestionEntry.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
 
-                    suggestionBlock = new TextBlock() { Text = suggestion + " ", FontSize = 20 };
+                suggestionKey = new TextBlock() { Text = curKey, Opacity = 1, FontSize = 15 , FontWeight=FontWeight.Bold, VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center};
+                suggestionKey.Foreground = new SolidColorBrush() { Color = Avalonia.Media.Color.Parse("DodgerBlue") };
 
-                    suggestionEntry.Children.Add(suggestionBlock);
-                    Grid.SetRow(suggestionBlock, 0);
+                suggestionBlock = new TextBlock() { Text = suggestion + " ", FontSize = 20, VerticalAlignment=Avalonia.Layout.VerticalAlignment.Center};
 
-                    suggestionKey = new TextBlock() { Text = curKey , Opacity=1, FontSize=12,
-                        HorizontalAlignment=Avalonia.Layout.HorizontalAlignment.Center};
 
                     suggestionEntry.Children.Add(suggestionKey);
-                    Grid.SetRow(suggestionKey, 1);
+                    Grid.SetColumn(suggestionKey, 0);
+
+                    suggestionEntry.Children.Add(suggestionBlock);
+                    Grid.SetColumn(suggestionBlock, 1);
 
                     this.suggestionsGrid.Children.Add(suggestionEntry);
-                    Grid.SetColumn(suggestionEntry, curColumn);
+                    Grid.SetRow(suggestionEntry, curColumn);
                     curColumn++;
 
             }
@@ -1325,7 +1340,7 @@ namespace ihnm.Managers
             for (int i = 0; i < this.suggestionsGrid.Children.Count; i++)
             {
                 Grid suggestionEntry = (Grid)this.suggestionsGrid.Children[i];
-                TextBlock suggestion = (TextBlock)suggestionEntry.Children[0];
+                TextBlock suggestion = (TextBlock)suggestionEntry.Children[1];
                 if (suggestions.Count <= i || suggestions.Count <= index)
                     return;
                 string selSuggestion = this.suggestions[index];

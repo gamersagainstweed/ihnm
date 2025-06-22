@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="1000"
         x:Class="ihnm.overlayWindow"
         Title="overlayWindow"
 		xmlns:md="clr-namespace:Markdown.Avalonia;assembly=Markdown.Avalonia"
@@ -20,20 +20,22 @@ Background="{x:Null}"
 		</Canvas>
 
 		<Grid Name="suggestionsGrid" Canvas.Top="40" Canvas.Left="25">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="auto"></ColumnDefinition>
-				<ColumnDefinition Width="auto"></ColumnDefinition>
-				<ColumnDefinition Width="auto"></ColumnDefinition>
-				<ColumnDefinition Width="auto"></ColumnDefinition>
-				<ColumnDefinition Width="auto"></ColumnDefinition>
-				<ColumnDefinition Width="auto"></ColumnDefinition>
-				<ColumnDefinition Width="auto"></ColumnDefinition>
-				<ColumnDefinition Width="auto"></ColumnDefinition>
-				<ColumnDefinition Width="auto"></ColumnDefinition>
-				<ColumnDefinition Width="auto"></ColumnDefinition>
-				<ColumnDefinition Width="auto"></ColumnDefinition>
-				<ColumnDefinition Width="auto"></ColumnDefinition>
-			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto"></RowDefinition>
+				<RowDefinition Height="auto"></RowDefinition>
+				<RowDefinition Height="auto"></RowDefinition>
+				<RowDefinition Height="auto"></RowDefinition>
+				<RowDefinition Height="auto"></RowDefinition>
+				<RowDefinition Height="auto"></RowDefinition>
+				<RowDefinition Height="auto"></RowDefinition>
+				<RowDefinition Height="auto"></RowDefinition>
+				<RowDefinition Height="auto"></RowDefinition>
+				<RowDefinition Height="auto"></RowDefinition>
+				<RowDefinition Height="auto"></RowDefinition>
+				<RowDefinition Height="auto"></RowDefinition>
+				<RowDefinition Height="auto"></RowDefinition>
+				<RowDefinition Height="auto"></RowDefinition>
+			</Grid.RowDefinitions>
 		</Grid>
 		
 

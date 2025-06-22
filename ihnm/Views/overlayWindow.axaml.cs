@@ -99,7 +99,7 @@ public partial class overlayWindow : Window
         this.Loaded += OverlayWindow_Loaded;
 
         this.CanResize = false;
-        this.Height = 80;
+        this.Height = 300;
         this.Width = 1000;
         this.SystemDecorations = SystemDecorations.None;
         this.ShowInTaskbar = false;
@@ -289,8 +289,13 @@ public partial class overlayWindow : Window
         sampledVoiceManager = null;
         sherpaVoiceManager = null;
         lipsyncManager = null;
+
+        var topLevel = TopLevel.GetTopLevel(this);
+        var factor = topLevel.RenderScaling;
+
         if (Common.voices.Contains(Common.voice))
         {
+
 
             sampledVoiceManager = new SampledVoiceManager(audioPlaybackEngine1, audioPlaybackEngine2,
             this.ttsBlock, this.ttsHighlight, this.suggestionsGrid, this.delayRect, this.cursorRect,
