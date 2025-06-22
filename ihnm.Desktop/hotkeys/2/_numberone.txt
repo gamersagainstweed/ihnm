@@ -1,0 +1,1 @@
+LeftControl+LeftAlt+G
