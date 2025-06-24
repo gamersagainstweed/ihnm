@@ -219,9 +219,9 @@ Use /vtt (key) command to specify another key.
 There's a command /numberone that's like /scatman but for "We're Number One"
 
 # Download
-You should download ihnm-v1.1-win64-cuda.zip on the Releases page. 
+You should download ihnm-v1.4-win64-cuda.zip on the Releases page. 
 
-If for some mysterious reasons it crashes (like in my case) please download ihnm-v1.1-win64-cpu-only.zip
+If for some mysterious reasons it crashes pls check that you have CUDA 11.8 and corresponding cuDNN properly installed.
 
 Unpack it where you wish and run ihnm.Desktop.exe
 
