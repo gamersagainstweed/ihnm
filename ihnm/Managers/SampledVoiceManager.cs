@@ -64,6 +64,8 @@ namespace ihnm.Managers
         public string uncompleteWord;
         public string selectedSuggestion;
 
+        double suggestionsStartX;
+
         public bool insideAlias;
 
         public double delayRectPos = 0;
@@ -816,7 +818,7 @@ namespace ihnm.Managers
 
             int curWord = 0;
 
-            while (suggestions.Count < 12 && curWord < aliasManager.aliasNames.Count)
+            while (suggestions.Count < 10 && curWord < aliasManager.aliasNames.Count)
             {
 
                 if (aliasManager.aliasNamesList[curWord].StartsWith((this.uncompleteWord)))
@@ -829,7 +831,7 @@ namespace ihnm.Managers
 
             curWord = 0;
 
-            while (suggestions.Count < 12 && curWord < this.words.Count)
+            while (suggestions.Count < 10 && curWord < this.words.Count)
             {
 
                 if (this.words[curWord].StartsWith(this.removePrefix(this.uncompleteWord)))
@@ -842,7 +844,7 @@ namespace ihnm.Managers
 
             curWord = 0;
 
-            while (suggestions.Count < 12 && curWord < musicManager.music.Count)
+            while (suggestions.Count < 10 && curWord < musicManager.music.Count)
             {
 
                 if (musicManager.music[curWord].StartsWith((this.uncompleteWord)))
@@ -856,7 +858,7 @@ namespace ihnm.Managers
 
             curWord = 0;
 
-            while (suggestions.Count < 12 && curWord < loopManager.loops.Count)
+            while (suggestions.Count < 10 && curWord < loopManager.loops.Count)
             {
 
                 if (loopManager.loops[curWord].StartsWith((this.uncompleteWord)))
@@ -869,7 +871,7 @@ namespace ihnm.Managers
 
             curWord = 0;
 
-            while (suggestions.Count < 12 && curWord < Soundboard.sounds.Count)
+            while (suggestions.Count < 10 && curWord < Soundboard.sounds.Count)
             {
 
                 if (Soundboard.sounds[curWord].StartsWith((this.uncompleteWord)))
@@ -916,6 +918,12 @@ namespace ihnm.Managers
         {
             this.suggestionsGrid.Children.Clear();
 
+            if (this.uncompleteWord.Length == 1)
+                this.suggestionsStartX = ttsBlock.Bounds.Width * 2;
+
+            Canvas.SetLeft(this.suggestionsGrid, this.suggestionsStartX);
+
+
             TextBlock suggestionBlock;
             TextBlock suggestionKey;
             Grid suggestionEntry;
@@ -937,30 +945,34 @@ namespace ihnm.Managers
                 else if (curColumn == 9)
                     curKey = (0).ToString();
                 else
-                    curKey = "";
+                    break;
 
                 suggestionEntry = new Grid();
-                suggestionEntry.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
-                suggestionEntry.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
-
-                suggestionBlock = new TextBlock() { Text = suggestion + " ", FontSize = 20 };
-
-                suggestionEntry.Children.Add(suggestionBlock);
-                Grid.SetRow(suggestionBlock, 0);
+                suggestionEntry.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Parse("15") });
+                suggestionEntry.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
 
                 suggestionKey = new TextBlock()
                 {
                     Text = curKey,
                     Opacity = 1,
-                    FontSize = 12,
-                    HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
+                    FontSize = 15,
+                    FontWeight = FontWeight.Bold,
+                    HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center,
+                    VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
                 };
+                suggestionKey.Foreground = new SolidColorBrush() { Color = Avalonia.Media.Color.Parse("DodgerBlue") };
+
+                suggestionBlock = new TextBlock() { Text = suggestion + " ", FontSize = 20, VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center };
+
 
                 suggestionEntry.Children.Add(suggestionKey);
-                Grid.SetRow(suggestionKey, 1);
+                Grid.SetColumn(suggestionKey, 0);
+
+                suggestionEntry.Children.Add(suggestionBlock);
+                Grid.SetColumn(suggestionBlock, 1);
 
                 this.suggestionsGrid.Children.Add(suggestionEntry);
-                Grid.SetColumn(suggestionEntry, curColumn);
+                Grid.SetRow(suggestionEntry, curColumn);
                 curColumn++;
 
             }

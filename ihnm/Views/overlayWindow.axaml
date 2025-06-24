@@ -19,7 +19,7 @@ Background="{x:Null}"
 			</Canvas.RenderTransform>
 		</Canvas>
 
-		<Grid Name="suggestionsGrid" Canvas.Top="40" Canvas.Left="25">
+		<Grid Name="suggestionsGrid" Canvas.Top="40" Canvas.Left="25" Background="Black">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="auto"></RowDefinition>
 				<RowDefinition Height="auto"></RowDefinition>

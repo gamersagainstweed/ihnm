@@ -1227,7 +1227,7 @@ namespace ihnm.Managers
             {
 
 
-                while (suggestions.Count < 12 && curWord < this.wordlist.Count)
+                while (suggestions.Count < 10 && curWord < this.wordlist.Count)
                 {
 
                     if (this.wordlist[curWord].StartsWith(this.uncompleteWord) 
@@ -1286,7 +1286,8 @@ namespace ihnm.Managers
                 suggestionEntry.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Parse("15") });
                 suggestionEntry.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
 
-                suggestionKey = new TextBlock() { Text = curKey, Opacity = 1, FontSize = 15 , FontWeight=FontWeight.Bold, VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center};
+                suggestionKey = new TextBlock() { Text = curKey, Opacity = 1, FontSize = 15 , FontWeight=FontWeight.Bold,
+                    HorizontalAlignment=Avalonia.Layout.HorizontalAlignment.Center, VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center};
                 suggestionKey.Foreground = new SolidColorBrush() { Color = Avalonia.Media.Color.Parse("DodgerBlue") };
 
                 suggestionBlock = new TextBlock() { Text = suggestion + " ", FontSize = 20, VerticalAlignment=Avalonia.Layout.VerticalAlignment.Center};
