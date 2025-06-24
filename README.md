@@ -208,9 +208,6 @@ By default vtt key is set to "Q" (sorry GMODers).
 
 Use /vtt (key) command to specify another key.
 
-### What the hell is VTT?
-I'm surprised you asked but VTT stands for Voice-to-Talk. 
-
 ## Some useful commands
 
 /vol (volume) - change the volume of everything except your mic input if it's enabled.
