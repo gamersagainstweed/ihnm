@@ -7,6 +7,8 @@ Demo: https://www.youtube.com/watch?v=af3beTlEV9Q
 ## CUDA
 Please install CUDA 11.8 (other versions aren't supported) for the best performance if you're using NVIDIA GPU. Kokoro voices and Speech-to-Text work bad without CUDA.
 
+Besides CUDA 11.8 you have to install cuDNN v8.9.7 obtainable from here: https://developer.nvidia.com/rdp/cudnn-archive, here are the instructions: https://docs.nvidia.com/deeplearning/cudnn/installation/latest/windows.html
+
 ## Virtual Cable
 This app won't work without virtual cable. I'm using this one: https://vb-audio.com/Cable/.
 
