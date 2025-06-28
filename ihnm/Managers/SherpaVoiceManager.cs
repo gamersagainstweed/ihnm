@@ -1283,14 +1283,14 @@ namespace ihnm.Managers
                     break;
 
                 suggestionEntry = new Grid();
-                suggestionEntry.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
+                suggestionEntry.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Parse("30") });
                 suggestionEntry.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
 
-                suggestionKey = new TextBlock() { Text = curKey, Opacity = 1, FontSize = 25 , FontWeight=FontWeight.Bold,
+                suggestionKey = new TextBlock() { Text = curKey, Opacity = 1, FontSize = 27 , FontWeight=FontWeight.Bold,
                     HorizontalAlignment=Avalonia.Layout.HorizontalAlignment.Center, VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center};
                 suggestionKey.Foreground = new SolidColorBrush() { Color = Avalonia.Media.Color.Parse("DodgerBlue") };
 
-                suggestionBlock = new TextBlock() { Text = suggestion + " ", FontSize = 30, VerticalAlignment=Avalonia.Layout.VerticalAlignment.Center};
+                suggestionBlock = new TextBlock() { Text = suggestion + " ", FontSize = 30, VerticalAlignment=Avalonia.Layout.VerticalAlignment.Top};
 
 
                     suggestionEntry.Children.Add(suggestionKey);
@@ -1302,10 +1302,10 @@ namespace ihnm.Managers
                     this.suggestionsGrid.Children.Add(suggestionEntry);
                     
 
-                if (curColumn > 6)
+                if (curColumn > 5)
                 {
                     Grid.SetColumn(suggestionEntry, 1);
-                    Grid.SetRow(suggestionEntry, curColumn-7);
+                    Grid.SetRow(suggestionEntry, curColumn-6);
                 }
                 else
                 {
@@ -1359,8 +1359,7 @@ namespace ihnm.Managers
                 string selSuggestion = this.suggestions[index];
                 string curSuggestion = this.suggestions[i];
                 //this.suggestionsGrid.Children.RemoveAt(i);
-                if (i == index)
-                {
+ 
                     if (Soundboard.sounds.Contains(curSuggestion))
                         suggestion.Foreground = new SolidColorBrush() { Color = Common.soundColor };
                     else if (musicManager.music.Contains(curSuggestion))
@@ -1370,23 +1369,8 @@ namespace ihnm.Managers
                     else if (songsManager.songs.Contains(curSuggestion))
                         suggestion.Foreground = new SolidColorBrush() { Color = Common.songColor };
                     else
-                        suggestion.Foreground = new SolidColorBrush() { Color = Avalonia.Media.Color.Parse("DodgerBlue") };
-                }
-                else
-                {
-                    if (Soundboard.sounds.Contains(curSuggestion))
-                        suggestion.Foreground = new SolidColorBrush() { Color = getLighterColor(Common.soundColor) };
-                    else if (musicManager.music.Contains(curSuggestion))
-                        suggestion.Foreground = new SolidColorBrush() { Color = getLighterColor(Common.musicColor) };
-                    else if (loopManager.loops.Contains(curSuggestion))
-                        suggestion.Foreground = new SolidColorBrush() { Color = getLighterColor(Common.loopColor) };
-                    else if (songsManager.songs.Contains(curSuggestion))
-                        suggestion.Foreground = new SolidColorBrush() { Color = getLighterColor(Common.songColor) };
-                    else
                         suggestion.Foreground = new SolidColorBrush() { Color = Avalonia.Media.Color.Parse("White") };
 
-
-                }
                 //this.suggestionsGrid.Children.Insert(i, suggestion);
             }
 
