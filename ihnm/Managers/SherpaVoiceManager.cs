@@ -1283,14 +1283,14 @@ namespace ihnm.Managers
                     break;
 
                 suggestionEntry = new Grid();
-                suggestionEntry.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Parse("15") });
+                suggestionEntry.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
                 suggestionEntry.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
 
-                suggestionKey = new TextBlock() { Text = curKey, Opacity = 1, FontSize = 15 , FontWeight=FontWeight.Bold,
+                suggestionKey = new TextBlock() { Text = curKey, Opacity = 1, FontSize = 25 , FontWeight=FontWeight.Bold,
                     HorizontalAlignment=Avalonia.Layout.HorizontalAlignment.Center, VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center};
                 suggestionKey.Foreground = new SolidColorBrush() { Color = Avalonia.Media.Color.Parse("DodgerBlue") };
 
-                suggestionBlock = new TextBlock() { Text = suggestion + " ", FontSize = 20, VerticalAlignment=Avalonia.Layout.VerticalAlignment.Center};
+                suggestionBlock = new TextBlock() { Text = suggestion + " ", FontSize = 30, VerticalAlignment=Avalonia.Layout.VerticalAlignment.Center};
 
 
                     suggestionEntry.Children.Add(suggestionKey);
@@ -1300,7 +1300,19 @@ namespace ihnm.Managers
                     Grid.SetColumn(suggestionBlock, 1);
 
                     this.suggestionsGrid.Children.Add(suggestionEntry);
+                    
+
+                if (curColumn > 6)
+                {
+                    Grid.SetColumn(suggestionEntry, 1);
+                    Grid.SetRow(suggestionEntry, curColumn-7);
+                }
+                else
+                {
                     Grid.SetRow(suggestionEntry, curColumn);
+                }
+
+
                     curColumn++;
 
             }

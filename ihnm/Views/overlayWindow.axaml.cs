@@ -100,7 +100,7 @@ public partial class overlayWindow : Window
 
         this.CanResize = false;
         this.Height = 300;
-        this.Width = 1000;
+        this.Width = 1200;
         this.SystemDecorations = SystemDecorations.None;
         this.ShowInTaskbar = false;
 
@@ -1509,7 +1509,7 @@ public partial class overlayWindow : Window
                         this.outputSetMessage("voice", Common.voice);
                     }
                     else
-                        this.raiseError("this voice doesn't exist. each voice has its own subdir with the corresponding name in sounds/");
+                        this.raiseError("this voice doesn't exist. please check sherpaVoices folder");
                     break;
                 case "playbackvolume":
 
